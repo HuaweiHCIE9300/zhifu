@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>这是工单系统的首页</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/foundation/5.5.3/css/foundation.min.css">
+    <script src="https://cdn.staticfile.net/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.net/foundation/5.5.3/js/foundation.min.js"></script>
+    <script src="https://cdn.staticfile.net/foundation/5.5.3/js/vendor/modernizr.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <script src="{% static 'js/jquery-2.1.1.js'%}"></script>
+    <script src="{% static 'js/jquery-2.1.1.min.js'%}"></script>
+    <script src="{% static 'js/foundation.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</head>
+<body style="padding:20px">
+
+<h2>手风琴实例</h2>
+<ul class="accordion" data-accordion>
+    <li class="accordion-navigation">
+        <a href="#demo">手风琴 1</a>
+        <div id="demo" class="content active">
+            Demo 1 - 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+        </div>
+    </li>
+    <li class="accordion-navigation">
+        <a href="#demo2">手风琴 2</a>
+        <div id="demo2" class="content">
+            Demo 2 - 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+        </div>
+    </li>
+    <li class="accordion-navigation">
+        <a href="#demo3">手风琴 3</a>
+        <div id="demo3" class="content">
+            Demo 3 - 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+        </div>
+    </li>
+</ul>
+
+<script>
+    $(document).ready(function() {
+        $(document).foundation();
+    })
+</script>
+
+</body>
+
+
+
+
+</html>
