@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{% block title %}
+    <title>ACL冲突检测</title>
+{% endblock %}
+{% block body %}
+<div class="container-fluid border-2 bg-warning" style="width: 1200px">
+    <h1>ACL冲突检测</h1><h3><a href="/index/">首页</a> </h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="border">
+            <div style="display: inline-block" class="p-2">
+                <div>输入ACL的源IP地址[格式如：10.1.1.0/24,10.1.1.1/32,务必加上掩码]：</div>
+                <div style="width: 500px"><input id="internet4" type="text" name="sip2" ></div>
+            </div>
+            <div style="display: inline-block" class="p-2">
+                <div>输入ACL的目的IP址[务必加上掩码]：</div>
+                <div style="width: 300px"><input id="internet5" type="text" name="dip2" ></div>
+            </div>
+            <div style="display: inline-block;color: red" class="p-2">
+                <div>输入ACL的目的端口：</div>
+                <div style="width: 300px"><input id="internet6" type="text" name="dport1" ></div>
+            </div>
+
+            <div class="p-1">或者(二选一)</div>
+
+            <div style="display: inline-block" class="p-2">
+                <div>输入ACL的源IP地址[格式如：10.1.1.0/24,10.1.1.1/32,务必加上掩码]：</div>
+                <div style="width: 500px"><input id="internet1" type="text" name="sip1" ></div>
+            </div>
+            <div style="display: inline-block;color:red" class="p-2">
+                <div>输入ACL的源端口：</div>
+                <div style="width: 300px"><input id="internet2" type="text" name="sport1"></div>
+            </div>
+            <div style="display: inline-block" class="p-2">
+                <div>输入ACL的目的IP址[务必加上掩码]：</div>
+                <div style="width: 300px"><input id="internet3" type="text" name="dip1" ></div>
+            </div>
+
+
+
+
+            <div class="p-1">
+                <div>输入需要比对的ACL条目：</div>
+                <div><textarea rows="12" cols="141" id="u843_input523" name="aclall" required></textarea></div>
+            </div>
+            <div class="p-1">
+                <div style="color: green">ACL冲突检测的结果：</div>
+                <div><textarea rows="2" cols="141" id="u843_input513">{{ allpanduan }}</textarea></div>
+            </div>
+        </div>
+        <div class="p-2"><input type="submit" value="提交"></div>
+    </form>
+</div>
+{% endblock %}

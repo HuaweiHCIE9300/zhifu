@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% block title %}
+    <title>公网白名单放行工单页面</title>
+{% endblock %}
+{% block body %}
+    <div class="container-fluid border-2 bg-warning" style="width: 1200px">
+        <h1>公网加白工单</h1><h3><a href="/index/">首页</a> </h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="border">
+                <div class="form-check" style="float: left;width: 200px">
+                    <input type="radio" id="radio1" name="optradio" value="1">临时加白
+                    <label class="form-check-label" for="radio1"></label>
+                </div>
+                <div class="form-check" style="width: 200px;">
+                    <input type="radio" id="radio2" name="optradio" value="2" checked>永久加白
+                    <label class="form-check-label" for="radio2"></label>
+                </div>
+            </div>
+            <p></p>
+            <div class="border">
+                <div style="display: inline-block" class="p-2">
+                    <div>互联网IP:</div>
+                    <div><input id="internet" type="text" name="internetip" required></div>
+                </div>
+
+                <div style="display: inline-block" class="p-2">
+                    <div>内网IP:</div>
+                    <div><input id="inside" type="text" name="insideip" required></div>
+                </div>
+
+                <div class="p-2">
+                    <div>互联网端口[如果有多个端口，格式:8080/8443/443]:</div>
+                    <div><input style="width:400px" id="allport" type="text" name="allport"></div>
+                </div>
+            </div>
+            <div class="p-2"><input type="submit" value="提交"></div>
+        </form>
+        <div class="border">
+            <div style="color: red" class="p-2"><h5>配置输出如下：</h5></div>
+            <div><textarea rows="15" cols="141" id="u843_input52" type="text">
+                {% for i in whitec %}
+                    {{ i }}
+                {% endfor %}
+            </textarea></div>
+        </div>
+    </div>
+
+
+{% endblock %}
